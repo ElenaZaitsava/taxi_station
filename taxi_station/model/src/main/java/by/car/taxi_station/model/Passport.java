@@ -1,16 +1,25 @@
 package by.car.taxi_station.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.*;
+
 @Getter
 @Setter
-@AllArgsConstructor
+@Entity
 
 public class Passport {
 
-    private Long id;
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
 
-    private String passportNumber;
-}
+        @Column(name ="number_uniq",length = 12)
+
+        private String uniqNumber;
+
+        private String passportNumber;
+    }
+
+
